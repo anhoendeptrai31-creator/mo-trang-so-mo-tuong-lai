@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10264d">
+<meta name="description" content="Mở Trang Số – Mở Tương Lai: Học cùng AI, tự học sáng tạo và an toàn.">
+<title>Mở Trang Số – Mở Tương Lai</title>
+<style>
+:root{
+  --navy:#10264d;--blue:#2878c8;--sky:#dff3ff;--gold:#ffd166;--cream:#fffaf0;
+  --ink:#20304a;--muted:#64748b;--white:#fff;--green:#27876c;--pink:#ffe3ec;
+  --shadow:0 18px 45px rgba(16,38,77,.12);--radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;font-family:ui-rounded,"Segoe UI",system-ui,-apple-system,sans-serif;color:var(--ink);background:#f7fbff;line-height:1.6}
+a{color:inherit}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(1120px,92%);margin:auto}
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid #e7eef8}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:74px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;color:var(--navy);letter-spacing:-.4px}
+.brand-icon{display:grid;place-items:center;width:43px;height:43px;border-radius:15px;background:var(--gold);font-size:25px;box-shadow:0 5px 0 #e8ad34}
+.nav-links{display:flex;align-items:center;gap:20px}
+.nav-links a{text-decoration:none;font-size:.92rem;font-weight:750;color:#43516a}
+.nav-links a:hover{color:var(--blue)}
+.menu-btn{display:none;border:0;background:var(--sky);padding:9px 12px;border-radius:12px;color:var(--navy)}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 85% 20%,#377fc8 0,transparent 25%),linear-gradient(135deg,#10264d 0%,#174f83 60%,#2878c8 100%);color:#fff;padding:82px 0 78px}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.17);width:380px;height:380px;right:-80px;bottom:-210px}
+.hero:after{width:520px;height:520px;right:-150px;bottom:-280px}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:38px}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:7px 13px;border-radius:999px;font-weight:800;font-size:.82rem}
+h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.04;letter-spacing:-2px;margin:22px 0}
+h1 span{color:var(--gold)}
+.hero p{font-size:1.12rem;color:#e3f1ff;max-width:630px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:14px;padding:13px 19px;font-weight:850;text-decoration:none;transition:.2s;box-shadow:0 5px 0 rgba(0,0,0,.12)}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:none}
+.btn-outline{background:transparent;border:1px solid #c9d8ec;color:var(--navy);box-shadow:none}
+.hero-art{min-height:330px;display:grid;place-items:center;position:relative}
+.book{position:relative;width:280px;height:220px;transform:rotate(-7deg);filter:drop-shadow(0 25px 25px rgba(0,0,0,.2));animation:float 4s ease-in-out infinite}
+.book:before,.book:after{content:"";position:absolute;top:0;width:50%;height:100%;background:var(--cream);border:4px solid #f4c76c}
+.book:before{left:0;border-radius:16px 4px 4px 16px;transform:skewY(5deg);background:linear-gradient(90deg,#fff9e9,#fff)}
+.book:after{right:0;border-radius:4px 16px 16px 4px;transform:skewY(-5deg);background:linear-gradient(90deg,#fff,#fff5db)}
+.book-title{position:absolute;z-index:2;top:49px;left:24px;right:24px;text-align:center;color:var(--navy);font-size:1.22rem;font-weight:1000;line-height:1.2}
+.book-title small{display:block;font-size:.76rem;color:var(--blue);margin-top:9px}
+.bee{position:absolute;z-index:3;font-size:95px;top:-70px;right:-12px;filter:drop-shadow(0 7px 0 rgba(0,0,0,.08));animation:bob 2.4s ease-in-out infinite}
+.spark{position:absolute;color:var(--gold);font-size:30px;animation:twinkle 2s infinite}
+.s1{top:0;left:8%}.s2{bottom:25px;right:7%;animation-delay:.7s}.s3{top:35%;right:0;font-size:22px;animation-delay:1s}
+@keyframes float{50%{transform:rotate(-3deg) translateY(-10px)}}
+@keyframes bob{50%{transform:translateY(-10px) rotate(4deg)}}
+@keyframes twinkle{50%{opacity:.35;transform:scale(.75)}}
+.section{padding:76px 0}
+.section-head{text-align:center;max-width:760px;margin:0 auto 34px}
+.kicker{color:var(--blue);font-size:.82rem;text-transform:uppercase;letter-spacing:1.8px;font-weight:950}
+h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.15;letter-spacing:-1px;color:var(--navy);margin:8px 0 12px}
+.section-head p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid #e5edf7;border-radius:var(--radius);padding:24px;box-shadow:0 8px 24px rgba(16,38,77,.04)}
+.card h3{margin:10px 0 7px;color:var(--navy);font-size:1.15rem}
+.card p{margin:0;color:var(--muted);font-size:.96rem}
+.card-icon{display:grid;place-items:center;width:54px;height:54px;border-radius:17px;background:var(--sky);font-size:27px}
+.tag{display:inline-block;margin-top:14px;background:#eef6ff;color:#2364a3;border-radius:999px;padding:5px 10px;font-size:.78rem;font-weight:850}
+.tint{background:linear-gradient(180deg,#eff8ff,#f7fbff)}
+.tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
+.tool{background:#fff;border:1px solid #e2ebf6;border-radius:20px;padding:18px 14px;text-align:center}
+.tool .emoji{font-size:33px}
+.tool h3{font-size:.97rem;color:var(--navy);margin:8px 0 5px}
+.tool p{font-size:.84rem;color:var(--muted);margin:0}
+.notice{display:flex;gap:14px;align-items:flex-start;background:#fff8df;border:1px solid #ffe39a;border-radius:18px;padding:17px 19px;margin-top:22px}
+.notice strong{color:#7b5600}
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:start}
+.steps{display:grid;gap:13px}
+.step{display:flex;gap:15px;background:#fff;border:1px solid #e5edf7;border-radius:18px;padding:17px}
+.step-num{flex:0 0 39px;height:39px;border-radius:13px;display:grid;place-items:center;background:var(--gold);font-weight:1000;color:var(--navy)}
+.step h3{margin:0 0 4px;font-size:1.02rem;color:var(--navy)}
+.step p{margin:0;color:var(--muted);font-size:.92rem}
+.prompt-box{background:var(--navy);color:#e8f4ff;padding:25px;border-radius:24px;box-shadow:var(--shadow)}
+.prompt-box h3{color:var(--gold);margin-top:0}
+.prompt-box p{font-size:.96rem}
+.prompt-text{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);padding:15px;border-radius:14px;font-size:.94rem}
+.prompt-box .btn{margin-top:13px}
+.shield-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.shield-item{display:flex;gap:14px;background:#fff;border:1px solid #e3edf7;border-radius:20px;padding:20px}
+.shield-item .icon{font-size:29px}
+.shield-item h3{margin:0 0 5px;color:var(--navy)}
+.shield-item p{margin:0;color:var(--muted);font-size:.94rem}
+.quiz-wrap{max-width:800px;margin:auto;background:#fff;border:1px solid #e2ebf6;border-radius:28px;padding:clamp(20px,4vw,36px);box-shadow:var(--shadow)}
+.quiz-top{display:flex;justify-content:space-between;gap:12px;align-items:center;color:var(--muted);font-weight:800;font-size:.9rem}
+.progress{height:8px;background:#eaf1fa;border-radius:99px;overflow:hidden;margin:15px 0 25px}
+.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--blue),#54c7d9);width:0;transition:width .3s}
+#question{font-size:1.3rem;font-weight:900;color:var(--navy);margin:0 0 18px}
+.answers{display:grid;gap:10px}
+.answer{border:1px solid #dce7f4;background:#fbfdff;border-radius:14px;text-align:left;padding:13px 15px;color:var(--ink);font-weight:700}
+.answer:hover{border-color:var(--blue);background:#eff8ff}
+.answer.correct{border-color:#2c9b74;background:#e7fff4}
+.answer.wrong{border-color:#d65b6b;background:#fff0f1}
+.feedback{margin-top:14px;font-weight:800;min-height:28px}
+.quiz-actions{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:20px}
+#result{display:none;text-align:center;padding:15px}
+#result .big-score{font-size:3rem;color:var(--blue);font-weight:1000}
+.evidence{background:linear-gradient(135deg,#fff4d2,#fffaf0);border-top:1px solid #ffe8a7;border-bottom:1px solid #ffe8a7}
+.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.checklist{display:grid;gap:10px}
+.checkrow{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #f0e4bf;border-radius:13px;padding:12px 14px}
+.checkrow input{margin-top:6px;accent-color:var(--blue);width:17px;height:17px}
+.checkrow span{font-weight:700}
+.progress-card{background:#fff;border:1px solid #f0e4bf;border-radius:22px;padding:22px}
+.progress-card h3{margin-top:0;color:var(--navy)}
+.evidence-bar{height:12px;background:#f5e7c2;border-radius:99px;overflow:hidden;margin:13px 0}
+.evidence-bar span{height:100%;display:block;background:var(--green);width:0;transition:width .25s}
+.field{display:grid;gap:7px;margin:14px 0}
+.field label{font-weight:850;color:var(--navy)}
+.field input,.field textarea{width:100%;border:1px solid #d9e5f2;border-radius:12px;padding:12px 13px;background:#fff;color:var(--ink)}
+.field textarea{min-height:90px;resize:vertical}
+footer{background:var(--navy);color:#e6f2ff;padding:36px 0}
+.footer-inner{display:flex;justify-content:space-between;gap:22px;align-items:center}
+footer strong{color:var(--gold)}
+footer p{margin:5px 0 0;color:#c6d9ef;font-size:.9rem}
+.backtop{color:#fff;text-decoration:none;font-weight:800}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#10264d;color:#fff;padding:12px 17px;border-radius:13px;box-shadow:var(--shadow);transition:.25s;z-index:50}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* Thiết kế phần kiểm tra như một quyển sách đang mở */
+.quiz-book{position:relative;max-width:860px;margin:auto;padding:18px 18px 18px 30px;background:linear-gradient(90deg,#d7a84b 0 12px,#fff1c9 12px 20px,#fffaf0 20px);border:1px solid #e6c777;border-radius:18px 28px 28px 18px;box-shadow:0 18px 0 #e4d3a7,0 24px 40px rgba(16,38,77,.16)}
+.quiz-book:before{content:"";position:absolute;inset:8px 8px 8px 24px;border:1px solid #f0dfb5;border-radius:10px 20px 20px 10px;pointer-events:none}
+.quiz-book-spine{position:absolute;left:13px;top:0;bottom:0;width:7px;background:repeating-linear-gradient(to bottom,#d3a348 0 10px,#f8df9b 10px 20px);border-radius:8px}
+.quiz-wrap{position:relative;z-index:1;background:linear-gradient(90deg,#fffefa,#fff);border:1px solid #f0e5cc;border-radius:12px 20px 20px 12px;padding:clamp(20px,4vw,36px);box-shadow:inset 8px 0 12px rgba(126,92,34,.06)}
+.answer{transition:transform .16s,background .16s,border-color .16s}
+.answer:hover:not(:disabled){transform:translateX(4px)}
+.answer:disabled{cursor:default;opacity:1}
+.answer.correct{border-width:2px;font-weight:850}
+.answer.wrong{border-width:2px}
+.feedback{padding:12px 14px;border-radius:12px;background:#f5f8fc;line-height:1.55;white-space:normal}
+.feedback.good{background:#e7fff4;border:1px solid #a6e5cd;color:#17684e}
+.feedback.bad{background:#fff0f1;border:1px solid #f2c0c5;color:#9b2635}
+#result{position:relative;z-index:1;background:#fffefa;border-radius:16px;padding:25px}
+
+@media(max-width:900px){.hero-grid,.split{grid-template-columns:1fr}.hero-art{min-height:280px}.tools-grid{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.nav-inner{min-height:65px}.menu-btn{display:block}.nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;padding:15px 4%;border-bottom:1px solid #e5edf7;flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:11px 0}.hero{padding:55px 0}.hero-art{min-height:245px}.book{transform:scale(.8) rotate(-7deg)}.section{padding:55px 0}.grid,.shield-grid,.evidence-grid{grid-template-columns:1fr}.tools-grid{grid-template-columns:repeat(2,1fr)}.footer-inner{align-items:flex-start;flex-direction:column}h1{letter-spacing:-1px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Toàn bộ nội dung sau nút bắt đầu được trình bày như một quyển sách */
+.book-journey{padding:42px 0 70px;background:radial-gradient(ellipse at top,#e7f4ff 0,#f7fbff 65%)}
+.book-heading{text-align:center;max-width:760px;margin:0 auto 24px;padding:0 18px}
+.book-label{display:inline-block;background:#fff1c9;color:#78551b;border:1px solid #e6c777;border-radius:999px;padding:8px 16px;font-weight:950;letter-spacing:.4px}
+.book-heading p{color:var(--muted);margin:12px 0 0}
+.book-spread{position:relative;max-width:1120px;width:92%;margin:auto;padding:20px 20px 18px 30px;background:linear-gradient(90deg,#d1a04a 0 13px,#f8e5ac 13px 22px,#fff8e7 22px,#fffdf7 50%,#fffaf0 100%);border:1px solid #e1c477;border-radius:18px 30px 30px 18px;box-shadow:0 12px 0 #e5d5a9,0 28px 55px rgba(16,38,77,.15)}
+.book-spread:before{content:"";position:absolute;inset:9px 9px 9px 25px;border:1px solid #eadcb9;border-radius:10px 22px 22px 10px;pointer-events:none}
+.book-spine-main{position:absolute;left:14px;top:0;bottom:0;width:7px;background:repeating-linear-gradient(to bottom,#bd8c37 0 12px,#f6d889 12px 24px);border-radius:8px}
+.book-pages{position:relative;z-index:1;min-height:440px}
+.book-pages>.section{display:none;padding:34px clamp(10px,3vw,32px);animation:pageIn .35s ease both}
+.book-pages>.section.active-page{display:block}
+.book-pages>.section.tint{background:linear-gradient(180deg,rgba(225,241,255,.65),rgba(255,255,255,.78));border-radius:12px}
+.book-pages .section-head{margin-bottom:28px}
+.book-navigation{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px dashed #d9c58f;padding:18px 10px 4px;margin-top:14px;color:#715b2f;font-weight:850}
+.book-navigation button:disabled{opacity:.45;cursor:not-allowed}
+.book-exit{text-align:center;margin:32px auto 0}
+.book-pages .quiz-book{max-width:780px}
+@keyframes pageIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}
+#startJourney,#startQuiz{font-family:inherit}
+@media(max-width:640px){.book-journey{padding:26px 0 48px}.book-spread{padding:12px 10px 14px 22px;width:94%;border-radius:12px 20px 20px 12px}.book-spine-main{left:9px;width:5px}.book-pages>.section{padding:24px 7px}.book-navigation{padding:14px 0 2px;flex-wrap:wrap}.book-navigation .btn{padding:10px 12px;font-size:.86rem}.book-pages{min-height:380px}}
+
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#home"><span class="brand-icon">📖</span><span>MỞ TRANG SỐ</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Mở menu">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" id="navCover">Bìa sách</a><a href="#bookJourney" id="navBook">Mở quyển sách</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">🐝 HỌC CÙNG AI · TỰ HỌC SÁNG TẠO & AN TOÀN</span>
+      <h1>Mở trang số,<br><span>mở tương lai!</span></h1>
+      <p>Mỗi trang sách là một cánh cửa tri thức. Hãy để AI đồng hành cùng bạn khám phá, sáng tạo và học tập có trách nhiệm — bởi người học vẫn là người cầm lái.</p>
+      <div class="actions">
+        <button class="btn btn-gold" id="startJourney">🚀 Bắt đầu hành trình</button>
+        <button class="btn btn-light" id="startQuiz">🧠 Mở trang thử thách</button>
+      </div>
+    </div>
+    <div class="hero-art" aria-label="Sách tri thức và Ong Mở Trang">
+      <span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span>
+      <div class="book"><div class="book-title">MỞ TRANG SỐ<small>MỞ TƯƠNG LAI</small><small>Học · Hỏi · Kiểm chứng</small></div><div class="bee">🐝</div></div>
+    </div>
+  </div>
+</section>
+
+<div id="bookJourney" class="book-journey" hidden>
+  <div class="book-heading"><span class="book-label">📖 MỞ TRANG SỐ – MỞ TƯƠNG LAI</span><p>Hãy lật từng trang để khám phá, thực hành và kiểm tra kiến thức cùng AI.</p></div>
+  <div class="book-spread"><div class="book-spine-main" aria-hidden="true"></div>
+    <div class="book-pages" id="bookPages">
+<section class="section" id="hanh-trinh">
+  <div class="container">
+    <div class="section-head"><div class="kicker">01 · Khám phá</div><h2>AI có thể đồng hành cùng bạn như thế nào?</h2><p>AI giúp mở rộng cách học, nhưng kết quả tốt nhất đến từ câu hỏi rõ ràng, tư duy phản biện và sự chủ động của người học.</p></div>
+    <div class="grid">
+      <article class="card"><div class="card-icon">🔎</div><h3>Tìm hiểu và đặt câu hỏi</h3><p>Nhờ AI giải thích khái niệm khó bằng ngôn ngữ dễ hiểu, đưa ví dụ và gợi ý câu hỏi để tự đào sâu.</p><span class="tag">Học chủ động</span></article>
+      <article class="card"><div class="card-icon">🗂️</div><h3>Tóm tắt tài liệu</h3><p>Yêu cầu AI hệ thống ý chính, lập bảng so sánh hoặc tạo câu hỏi ôn tập từ tài liệu bạn cung cấp.</p><span class="tag">Học có hệ thống</span></article>
+      <article class="card"><div class="card-icon">🎨</div><h3>Sáng tạo học liệu</h3><p>Phác thảo ý tưởng trò chơi, phiếu học tập, hình minh họa và kịch bản video phù hợp với người học.</p><span class="tag">Học sáng tạo</span></article>
+    </div>
+    <div class="notice"><div style="font-size:25px">💡</div><div><strong>Nguyên tắc vàng:</strong> AI là trợ lý, không phải người quyết định thay bạn. Luôn đọc lại, kiểm tra và chỉnh sửa nội dung trước khi sử dụng.</div></div>
+    <h3 style="text-align:center;color:var(--navy);margin:36px 0 17px">Một vài công cụ có thể khám phá</h3>
+    <div class="tools-grid">
+      <div class="tool"><div class="emoji">💬</div><h3>ChatGPT</h3><p>Giải thích, gợi ý, luyện tập</p></div>
+      <div class="tool"><div class="emoji">✨</div><h3>Gemini</h3><p>Khám phá ý tưởng, hỗ trợ học</p></div>
+      <div class="tool"><div class="emoji">📚</div><h3>NotebookLM</h3><p>Hỏi đáp trên nguồn tài liệu</p></div>
+      <div class="tool"><div class="emoji">🖍️</div><h3>Canva</h3><p>Thiết kế poster, slide, học liệu</p></div>
+      <div class="tool"><div class="emoji">🎬</div><h3>Công cụ video AI</h3><p>Hỗ trợ kịch bản, hình và video</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tint" id="xuong-sang-tao">
+  <div class="container">
+    <div class="section-head"><div class="kicker">02 · Thực hành</div><h2>Xưởng sáng tạo học liệu</h2><p>Đi từ mục tiêu học tập đến sản phẩm có thể sử dụng — không chỉ tạo ra thứ đẹp mắt mà còn phải đúng và hữu ích.</p></div>
+    <div class="split">
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div><h3>Xác định mục tiêu</h3><p>Người học cần biết, hiểu hoặc làm được điều gì sau hoạt động?</p></div></div>
+        <div class="step"><div class="step-num">2</div><div><h3>Viết yêu cầu cụ thể</h3><p>Nêu rõ lớp học, chủ đề, thời lượng, phong cách và dạng sản phẩm mong muốn.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div><h3>Kiểm chứng nội dung</h3><p>Đối chiếu sách giáo khoa, tài liệu đáng tin cậy và yêu cầu của giảng viên/giáo viên.</p></div></div>
+        <div class="step"><div class="step-num">4</div><div><h3>Chỉnh sửa và thử nghiệm</h3><p>Đọc lại, thử với người dùng thật, sửa lỗi rồi ghi nhận phần mình đã đóng góp.</p></div></div>
+      </div>
+      <div class="prompt-box">
+        <h3>🪄 Prompt mẫu dành cho người học sư phạm</h3>
+        <p>Sao chép câu lệnh này, sau đó thay đổi theo bài học thực tế của bạn.</p>
+        <div class="prompt-text" id="promptText">Bạn hãy đóng vai trợ lý thiết kế học liệu tiểu học. Gợi ý một trò chơi học tập cho học sinh lớp 3 về chủ đề [điền chủ đề]. Hãy nêu: (1) mục tiêu học tập; (2) luật chơi đơn giản; (3) 5 câu hỏi mẫu có đáp án; (4) cách tổ chức trong 5 phút; (5) những nội dung cần giáo viên kiểm chứng. Dùng tiếng Việt trong sáng, vui tươi, phù hợp lứa tuổi. Không tự bịa nguồn trích dẫn; hãy đánh dấu thông tin nào cần đối chiếu với tài liệu chính thức.</div>
+        <button class="btn btn-gold" id="copyPrompt">📋 Sao chép prompt</button>
+        <p style="font-size:.8rem;color:#bcd4ee;margin-bottom:0">Lưu ý: Prompt tốt giúp định hướng, nhưng không bảo đảm AI luôn trả lời chính xác.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="la-chan">
+  <div class="container">
+    <div class="section-head"><div class="kicker">03 · An toàn và trách nhiệm</div><h2>Lá chắn AI của người học thông thái</h2><p>Sáng tạo cùng AI cần đi cùng sự trung thực, kiểm chứng thông tin và tôn trọng quyền riêng tư.</p></div>
+    <div class="shield-grid">
+      <article class="shield-item"><div class="icon">🧐</div><div><h3>Kiểm chứng trước khi tin</h3><p>Đối chiếu thông tin với sách, tài liệu chính thức hoặc nhiều nguồn đáng tin cậy. Chú ý ngày tháng, số liệu và nguồn trích dẫn.</p></div></article>
+      <article class="shield-item"><div class="icon">🔐</div><div><h3>Bảo vệ dữ liệu cá nhân</h3><p>Không đưa mật khẩu, địa chỉ, số điện thoại, hồ sơ riêng tư hay thông tin nhận diện học sinh lên công cụ AI khi chưa được phép.</p></div></article>
+      <article class="shield-item"><div class="icon">✍️</div><div><h3>Trung thực học thuật</h3><p>Không nộp nguyên văn nội dung AI như sản phẩm hoàn toàn do mình làm. Hãy tự phân tích, biên tập và tuân thủ yêu cầu ghi nhận việc sử dụng AI.</p></div></article>
+      <article class="shield-item"><div class="icon">©️</div><div><h3>Tôn trọng bản quyền</h3><p>Kiểm tra quyền sử dụng hình ảnh, âm thanh và tài liệu. Ghi nguồn khi cần và không nhận công sức của người khác là của mình.</p></div></article>
+    </div>
+    <div class="notice"><div style="font-size:25px">🛡️</div><div><strong>Quy tắc 3K:</strong> <b>Không vội tin</b> — <b>Không chia sẻ dữ liệu nhạy cảm</b> — <b>Không sao chép thiếu trung thực</b>.</div></div>
+  </div>
+</section>
+
+<section class="section tint" id="thu-thach">
+  <div class="container">
+    <div class="section-head"><div class="kicker">04 · Trang thử thách</div><h2>Cuốn sách thử thách AI</h2><p>Mở từng trang, chọn câu trả lời và đọc lời giải thích để hiểu vì sao đáp án đúng.</p></div>
+    <div class="quiz-book"><div class="quiz-book-spine" aria-hidden="true"></div><div class="quiz-wrap">
+      <div id="quiz">
+        <div class="quiz-top"><span id="qCount">Câu 1/5</span><span id="scoreLabel">Điểm: 0</span></div>
+        <div class="progress"><span id="quizProgress"></span></div>
+        <h3 id="question"></h3>
+        <div class="answers" id="answers"></div>
+        <div class="feedback" id="feedback" aria-live="polite"></div>
+        <div class="quiz-actions"><span style="color:var(--muted);font-size:.85rem">Đọc kỹ rồi chọn đáp án nhé!</span><button class="btn btn-blue" id="nextBtn" disabled>Câu tiếp theo →</button></div>
+      </div>
+      <div id="result"><div style="font-size:3rem">🎉</div><h2>Hoàn thành thử thách!</h2><div class="big-score" id="finalScore">0/5</div><p id="resultText"></p><button class="btn btn-blue" id="restartBtn">↻ Làm lại</button></div>
+    </div>
+  </div>
+</section>
+
+    </div>
+    <div class="book-navigation"><button class="btn btn-outline" id="prevPage" disabled>← Trang trước</button><span id="pageNumber">Trang 1/4</span><button class="btn btn-blue" id="nextPage">Trang tiếp →</button></div>
+  </div>
+  <div class="book-exit"><button class="btn btn-outline" id="backCover">↩ Về bìa sách</button></div>
+</div>
+
+</main>
+
+<footer style="display:none">
+  <div class="container footer-inner">
+    <div><strong>🐝 MỞ TRANG SỐ – MỞ TƯƠNG LAI</strong><p>Mỗi trang mở ra một điều mới · Học cùng AI sáng tạo và an toàn</p></div>
+    <a class="backtop" href="#home">↑ Trở về đầu trang</a>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const heroCover = document.getElementById('home');
+const bookJourney = document.getElementById('bookJourney');
+const bookSections = [...document.querySelectorAll('#bookPages > .section')];
+let bookPage = 0;
+function showBookPage(index){
+  if(!bookSections.length) return;
+  bookPage = Math.max(0, Math.min(index, bookSections.length - 1));
+  bookSections.forEach((section, i) => section.classList.toggle('active-page', i === bookPage));
+  document.getElementById('prevPage').disabled = bookPage === 0;
+  document.getElementById('nextPage').disabled = bookPage === bookSections.length - 1;
+  document.getElementById('nextPage').textContent = bookPage === bookSections.length - 1 ? 'Đã hết sách' : 'Trang tiếp →';
+  document.getElementById('pageNumber').textContent = `Trang ${bookPage + 1}/${bookSections.length}`;
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function openBook(targetId){
+  heroCover.style.display = 'none';
+  bookJourney.hidden = false;
+  document.querySelector('footer').style.display = 'block';
+  const targetIndex = targetId ? bookSections.findIndex(s => s.id === targetId) : 0;
+  showBookPage(targetIndex >= 0 ? targetIndex : 0);
+}
+document.getElementById('startJourney').addEventListener('click', () => openBook());
+document.getElementById('startQuiz').addEventListener('click', () => openBook('thu-thach'));
+document.getElementById('prevPage').addEventListener('click', () => showBookPage(bookPage - 1));
+document.getElementById('nextPage').addEventListener('click', () => showBookPage(bookPage + 1));
+document.getElementById('backCover').addEventListener('click', () => { bookJourney.hidden = true; heroCover.style.display = ''; window.scrollTo({top:0,behavior:'smooth'}); });
+document.getElementById('navCover').addEventListener('click', () => { bookJourney.hidden = true; heroCover.style.display = ''; });
+document.getElementById('navBook').addEventListener('click', () => openBook());
+
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+const toast = document.getElementById('toast');
+let toastTimer;
+function showToast(message){
+  toast.textContent = message; toast.classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(()=>toast.classList.remove('show'),2300);
+}
+document.getElementById('copyPrompt').addEventListener('click', async () => {
+  const text = document.getElementById('promptText').innerText;
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast('Đã sao chép prompt! Hãy tùy chỉnh trước khi dùng.');
+  } catch(e) {
+    const area = document.createElement('textarea'); area.value = text; document.body.appendChild(area);
+    area.select(); document.execCommand('copy'); area.remove();
+    showToast('Đã sao chép prompt!');
+  }
+});
+
+const questions = [
+ {q:'AI đưa ra một thông tin nghe có vẻ rất thuyết phục. Bạn nên làm gì?',a:['Tin ngay vì AI trả lời rất nhanh','Đối chiếu với nguồn đáng tin cậy trước khi sử dụng','Chia sẻ ngay cho mọi người'],correct:1,why:'Chính xác! AI có thể tạo thông tin sai, vì vậy cần kiểm chứng.'},
+ {q:'Thông tin nào không nên nhập vào công cụ AI công cộng?',a:['Một chủ đề học tập chung','Một yêu cầu tạo câu hỏi ôn tập','Mật khẩu và dữ liệu riêng tư của học sinh'],correct:2,why:'Đúng rồi! Hãy bảo vệ thông tin cá nhân và dữ liệu nhạy cảm.'},
+ {q:'Cách sử dụng AI nào thể hiện trung thực học thuật?',a:['Nộp nguyên văn câu trả lời AI như bài tự làm','Dùng AI hỗ trợ, sau đó tự kiểm tra, chỉnh sửa và ghi nhận theo yêu cầu','Yêu cầu AI bịa tài liệu tham khảo'],correct:1,why:'Rất tốt! Bạn cần thể hiện đóng góp của mình và tuân thủ quy định.'},
+ {q:'Điều gì giúp câu lệnh (prompt) hữu ích hơn?',a:['Nêu rõ mục tiêu, đối tượng, định dạng và tiêu chí','Chỉ viết “làm cho hay”','Không cung cấp bối cảnh nào'],correct:0,why:'Đúng! Bối cảnh và tiêu chí rõ ràng giúp AI hiểu nhiệm vụ hơn.'},
+ {q:'Khi AI tạo hình ảnh hoặc tài liệu cho sản phẩm học tập, bạn nên…',a:['Cho rằng mọi nội dung đều tự do sử dụng','Bỏ qua nguồn và quyền sử dụng','Kiểm tra độ phù hợp, nguồn và quyền sử dụng trước khi công bố'],correct:2,why:'Chính xác! Hãy chú ý bản quyền, nguồn và mục đích sử dụng.'}
+];
+let qIndex=0, score=0, answered=false;
+const questionEl=document.getElementById('question'), answersEl=document.getElementById('answers');
+const feedbackEl=document.getElementById('feedback'), nextBtn=document.getElementById('nextBtn');
+function renderQuestion(){
+  answered=false; const q=questions[qIndex]; feedbackEl.className='feedback';
+  document.getElementById('qCount').textContent=`Câu ${qIndex+1}/${questions.length}`;
+  document.getElementById('scoreLabel').textContent=`Điểm: ${score}`;
+  document.getElementById('quizProgress').style.width=`${qIndex/questions.length*100}%`;
+  questionEl.textContent=q.q; answersEl.innerHTML=''; feedbackEl.textContent=''; nextBtn.disabled=true;
+  q.a.forEach((answer,i)=>{
+    const btn=document.createElement('button'); btn.className='answer'; btn.textContent=String.fromCharCode(65+i)+'. '+answer;
+    btn.addEventListener('click',()=>chooseAnswer(i,btn)); answersEl.appendChild(btn);
+  });
+}
+function chooseAnswer(i,btn){
+  if(answered)return; answered=true; const q=questions[qIndex];
+  [...answersEl.children].forEach((b,index)=>{b.disabled=true;if(index===q.correct)b.classList.add('correct')});
+  if(i===q.correct){feedbackEl.className='feedback good';score++;feedbackEl.textContent='✅ Chính xác! '+q.why;}
+  else{btn.classList.add('wrong');feedbackEl.className='feedback bad';feedbackEl.textContent='❌ Không đúng rồi! Đáp án đúng là '+String.fromCharCode(65+q.correct)+'. '+q.a[q.correct]+'. Vì sao? '+q.why.replace(/^(Chính xác!|Đúng rồi!|Rất tốt!|Đúng!|Rất tốt!|Chính xác!|Đúng rồi!)/,'').trim();}
+  document.getElementById('scoreLabel').textContent=`Điểm: ${score}`;
+  document.getElementById('quizProgress').style.width=`${(qIndex+1)/questions.length*100}%`;
+  nextBtn.disabled=false; nextBtn.textContent=qIndex===questions.length-1?'Xem kết quả 🎉':'Câu tiếp theo →';
+}
+nextBtn.addEventListener('click',()=>{
+  if(!answered)return;
+  if(qIndex<questions.length-1){qIndex++;renderQuestion();}
+  else{
+    document.getElementById('quiz').style.display='none';document.getElementById('result').style.display='block';
+    document.getElementById('finalScore').textContent=`${score}/${questions.length}`;
+    document.getElementById('resultText').textContent=score===5?'Tuyệt vời! Bạn đã nắm vững những nguyên tắc cơ bản khi học cùng AI.':score>=3?'Bạn đã có nền tảng tốt. Hãy xem lại các nguyên tắc và thử lại nhé!':'Hãy khám phá lại “Lá chắn AI” rồi quay lại thử thách nhé!';
+  }
+});
+document.getElementById('restartBtn').addEventListener('click',()=>{qIndex=0;score=0;document.getElementById('quiz').style.display='block';document.getElementById('result').style.display='none';renderQuestion();});
+renderQuestion();
+
+</script>
+</body>
+</html>
